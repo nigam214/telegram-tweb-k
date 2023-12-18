@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Telegram Web</title>
     <meta name="description" content="Telegram is a cloud-based mobile and desktop messaging app with a focus on security and speed.">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no,viewport-fit=cover"> 
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-title" content="Telegram Web">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -41,10 +41,38 @@
     <link rel="canonical" href="https://web.telegram.org/">
 
     <link rel="manifest" id="manifest">
-    <script type="module" crossorigin src="./index-55db424e.js"></script>
+    <style>
+      .time-inner {
+        visibility: hidden !important;
+      }
+      .vb-call-button {
+        padding: 10px;
+        background-color: black;
+        color: #fff;
+      }
+      #vb-call-box-inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      #vb-call-box {
+        position: relative;
+        height: 100%;
+        display: none;
+      }
+    </style>
+    <script type="module" crossorigin src="./index-afc85a9c.js"></script>
     <link rel="stylesheet" href="./index-5c4b8e53.css">
   </head>
   <body class="animation-level-2">
+    <div id="vb-call-box">
+      <div id="vb-call-box-inner">
+        <p>Click "call now" button to start video call!</p>
+        <button onclick="call_start()" class="vb-call-button">Call Now</button>
+      </div>
+    </div>
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
@@ -155,5 +183,10 @@
     </div>
     <div id="stories-viewer"></div>
     
+    <script>
+      function call_start() {
+        document.querySelector('.vb-call').click();
+      }
+    </script>
   </body>
 </html>
