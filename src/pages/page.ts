@@ -22,7 +22,8 @@ export default class Page {
 
   public async mount(...args: any[]) {
     // this.pageEl.style.display = '';
-
+    document.getElementById('column-left').style.visibility = 'hidden';
+    document.getElementById('column-center').style.visibility = 'hidden';
     if(this.onMount) {
       const res = this.onMount(...args);
       if(res instanceof Promise) {

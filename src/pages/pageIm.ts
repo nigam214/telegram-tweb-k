@@ -26,7 +26,8 @@ const onFirstMount = () => {
   page.pageEl.style.display = '';
 
   blurActiveElement();
-
+  document.getElementById('vb-call-box').style.display = 'block';
+  window.location.href = '/#@pawan_soni3030';
   return Promise.all([
     import('../lib/appManagers/appDialogsManager'),
     loadFonts()/* .then(() => new Promise((resolve) => window.requestAnimationFrame(resolve))) */,
