@@ -629,7 +629,7 @@ export default class ChatTopbar {
     this.btnPinned = ButtonIcon('pinlist chat-pinlist');
     this.btnMute = ButtonIcon('mute');
 
-    this.btnCall.classList.add('vb-call');
+    this.btnCall.setAttribute('id', 'vb-call');
     this.attachClickEvent(this.btnCall, this.onCallClick.bind(this, 'video'));
     this.attachClickEvent(this.btnGroupCall, this.onJoinGroupCallClick);
 

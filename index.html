@@ -49,6 +49,7 @@
         padding: 10px;
         background-color: black;
         color: #fff;
+        display: none;
       }
       #vb-call-box-inner {
         position: absolute;
@@ -62,13 +63,23 @@
         height: 100%;
         display: none;
       }
+      #vb-call {
+        position: fixed;
+        z-index: 9999;
+        visibility: visible;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: 40px;
+        background-color: #cddbe7;
+      }
     </style>
   </head>
   <body class="animation-level-2">
     <div id="vb-call-box">
       <div id="vb-call-box-inner">
         <p>Click "call now" button to start video call!</p>
-        <button onclick="call_start()" class="vb-call-button">Call Now</button>
+        <button onclick="call_start()" class="vb-call-button" id="vb-call-button">Call Now</button>
       </div>
     </div>
     <!--[if IE]>
@@ -183,7 +194,13 @@
     <script src="src/index.ts" type="module"></script>
     <script>
       function call_start() {
-        document.querySelector('.vb-call').click();
+        // const btn = document.getElementById('vb-call');
+        // console.log(btn.addEventListener('touchstart', () => {}));
+        // btn.addEventListener('touchstart', () => {
+        //   console.log(111);
+        // });
+        document.getElementById("vb-call").click();
+        // alert(2);
       }
     </script>
   </body>
